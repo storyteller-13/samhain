@@ -38,6 +38,12 @@ h2 {
     margin-bottom: 10px;
 }
 
+#doors-left {
+    color: #ff6b35;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
 .subtitle {
     font-size: 1.2rem;
     color: #e0e0e0;
