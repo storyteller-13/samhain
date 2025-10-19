@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Door Not Found | Dr. von Steinkirch's Samhain'25</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚪 door not found 🚪</h1>
+            <h2>the door you seek has vanished into the void
+                <br>perhaps it was never meant to be opened...
+                <br>or perhaps it's hiding in the shadows</h2>
+        </header>
+
+        <div class="error-container">
+            <div class="error-door">
+                <div class="error-door-front">
+                    <span class="error-number">404</span>
+                    <div class="error-door-knob"></div>
+                    <div class="error-crack"></div>
+                </div>
+            </div>
+            
+            <div class="error-actions">
+                <a href="index.html" class="back-button">return to the main chamber</a>
+                <a href="doors/1.html" class="secondary-button">try door 1</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>an experiment by <a href="https://marina.vonsteinkirch.com" target="_blank">dr. marina von steinkirch</a></p>
+    </footer>
+
+    <script src="script/script.js"></script>
+    <script>
+        // Add some spooky effects for the 404 page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add floating particles
+            createFloatingParticles();
+            
+            // Add some spooky console messages
+            console.log('%c🚪 Door 404 has been consumed by the void... 🚪', 'color: #ff6b35; font-size: 18px; font-weight: bold;');
+            console.log('%c👻 The spirits have hidden this door away! 👻', 'color: #ffd700; font-size: 14px;');
+            
+            // Add a subtle animation to the error door
+            const errorDoor = document.querySelector('.error-door');
+            if (errorDoor) {
+                setInterval(() => {
+                    errorDoor.style.transform = 'scale(1.02)';
+                    setTimeout(() => {
+                        errorDoor.style.transform = 'scale(1)';
+                    }, 200);
+                }, 3000);
+            }
+        });
+    </script>
+</body>
+</html>
