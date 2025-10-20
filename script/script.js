@@ -87,43 +87,12 @@ document.addEventListener('DOMContentLoaded', function() {
         for (let i = 0; i < particleCount; i++) {
             const particle = document.createElement('div');
             particle.className = 'particle';
-            particle.style.cssText = `
-                position: fixed;
-                width: 8px;
-                height: 8px;
-                background: #ff8c00;
-                clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-                pointer-events: none;
-                z-index: 1000;
-                left: ${Math.random() * 100}vw;
-                top: ${Math.random() * 100}vh;
-                animation: float ${5 + Math.random() * 10}s linear infinite;
-                opacity: ${0.3 + Math.random() * 0.4};
-            `;
+            particle.style.left = `${Math.random() * 100}vw`;
+            particle.style.top = `${Math.random() * 100}vh`;
+            particle.style.animationDuration = `${5 + Math.random() * 10}s`;
+            particle.style.opacity = `${0.3 + Math.random() * 0.4}`;
             document.body.appendChild(particle);
         }
-        
-        // Add CSS for particle animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes float {
-                0% {
-                    transform: translateY(100vh) rotate(0deg);
-                    opacity: 0;
-                }
-                10% {
-                    opacity: 1;
-                }
-                90% {
-                    opacity: 1;
-                }
-                100% {
-                    transform: translateY(-100px) rotate(360deg);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(style);
     }
     
     // Global variables for sound system

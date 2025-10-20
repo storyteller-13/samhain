@@ -18,7 +18,7 @@
 
                     <br>
 
-                    <span style="color: #8B008B; font-weight: bold;">
+                    <span class="purple-bold">
                     happy monday, beautiful anon<br>
                     day 2 of our sacred journey<br><br>
                     </span>
@@ -44,11 +44,11 @@
                     </div>
                 </div>
                 
-                <div class="placeholder-text" style="width: 100%; margin-top: 20px;">
+                <div class="placeholder-text full-width-margin">
 
                     <br>
 
-                    <span style="color: #8B008B; font-weight: bold;">
+                    <span class="purple-bold">
                         <em>"the cave you fear to enter holds the treasure you seek"</em>
                     — joseph campbell</span>   
 
@@ -64,26 +64,26 @@
 
                     <br><br>
 
-                    <span style="color: #8B008B; font-weight: bold;">1. purify your home</span><br>
+                    <span class="purple-bold">1. purify your home</span><br>
                     light another candle and put on some <a href="https://www.youtube.com/watch?v=yksJDZ0pVBQ&list=WL&index=13" target="_blank">schubert</a><br>
                     find what's messy and clean it up while dancing<br>
                     let joy move through your body<br><br>
                     
-                    <span style="color: #8B008B; font-weight: bold;">2. purify your body</span><br>
+                    <span class="purple-bold">2. purify your body</span><br>
                     prepare a nice bath<br>
                     (i usually add epsom salt for grounding)<br>
                     (and perhaps some oils, like lavender or chamomile)<br>
                     let your muscles relax<br>
                     <a href="https://www.youtube.com/watch?v=6oDO6hAq7Qk&list=LL&index=4" target="_blank">let your breath deepen</a><br><br>
 
-                    <span style="color: #8B008B; font-weight: bold;">3. purify your mind</span><br>
+                    <span class="purple-bold">3. purify your mind</span><br>
                     write down 12 things about yourself that<br>
                     you are — or once were — <a href="https://www.youtube.com/watch?v=-0wqyVBZzN8&list=WL&index=16" target="_blank">ashamed of</a><br>
                     things you've been carrying in secret for far too long<br>
                     now, instead of judging them<br>
                     ask yourself<br><br>
                     
-                    <em><span style="color: #8B008B; font-weight: bold;">why am i carrying this weight? <br>
+                    <em><span class="purple-bold">why am i carrying this weight? <br>
                         what is this part of me trying to protect me from? <br>
                         does it have a purpose?</em></span><br><br>
                     
@@ -123,57 +123,6 @@
         </div>
     </div>
 
-    <script>
-        // Star particle effects
-        document.addEventListener('DOMContentLoaded', function() {
-            createFloatingParticles();
-        });
-        
-        // Create floating particles
-        function createFloatingParticles() {
-            const particleCount = 40;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.cssText = `
-                    position: fixed;
-                    width: 8px;
-                    height: 8px;
-                    background: #ff8c00;
-                    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-                    pointer-events: none;
-                    z-index: 1000;
-                    left: ${Math.random() * 100}vw;
-                    top: ${Math.random() * 100}vh;
-                    animation: float ${5 + Math.random() * 10}s linear infinite;
-                    opacity: ${0.3 + Math.random() * 0.4};
-                `;
-                document.body.appendChild(particle);
-            }
-            
-            // Add CSS for particle animation
-            const style = document.createElement('style');
-            style.textContent = `
-                @keyframes float {
-                    0% {
-                        transform: translateY(100vh) rotate(0deg);
-                        opacity: 0;
-                    }
-                    10% {
-                        opacity: 1;
-                    }
-                    90% {
-                        opacity: 1;
-                    }
-                    100% {
-                        transform: translateY(-100px) rotate(360deg);
-                        opacity: 0;
-                    }
-                }
-            `;
-            document.head.appendChild(style);
-        }
-    </script>
+    <script src="../script/door-effects.js"></script>
 </body>
 </html>
