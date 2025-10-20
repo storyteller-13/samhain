@@ -1036,6 +1036,40 @@ a:active {
     border: 2px dashed #666;
 }
 
+/* Text with image layout */
+.text-with-image {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.text-with-image .placeholder-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.moon-image {
+    flex: 0 0 auto;
+    max-width: 300px;
+    text-align: center;
+    margin-top: 120px;
+}
+
+.new-moon-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    border: 3px solid #ff8c00;
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.new-moon-img:hover {
+    transform: scale(3);
+    box-shadow: 0 0 30px rgba(255, 140, 0, 0.6);
+}
+
 /* Mobile optimizations for door pages */
 @media (max-width: 768px) {
     .door-page {
@@ -1066,6 +1100,20 @@ a:active {
         padding: 15px;
         font-size: 1rem;
         line-height: 1.6;
+    }
+    
+    .text-with-image {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .text-with-image .placeholder-text {
+        min-width: unset;
+    }
+    
+    .moon-image {
+        max-width: 100%;
+        align-self: center;
     }
 }
 
@@ -1098,5 +1146,13 @@ a:active {
         padding: 12px;
         font-size: 0.9rem;
         line-height: 1.5;
+    }
+    
+    .text-with-image {
+        gap: 15px;
+    }
+    
+    .moon-image {
+        max-width: 90%;
     }
 }
