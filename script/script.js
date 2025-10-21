@@ -28,8 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // Remove all classes first
             door.classList.remove('opened', 'locked', 'available');
             
-            if (doorNumber === 1 || doorNumber === 2) {
-                // Doors 1 and 2 are available to open (normal state)
+            if (doorNumber === 1 || doorNumber === 2 || doorNumber === 3) {
+                // Doors 1, 2, and 3 are available to open (normal state)
                 door.classList.add('available');
                 door.addEventListener('click', function() {
                     openDoor(this);
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function showLockedMessage(door) {
         const doorNumber = door.getAttribute('data-day');
         
-        if (doorNumber === "1" || doorNumber === "2") {
+        if (doorNumber === "1" || doorNumber === "2" || doorNumber === "3") {
             alert(`Door ${doorNumber} is already available to open!`);
         } else {
             alert(`Door ${doorNumber} is currently locked.`);
@@ -207,8 +207,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const doorsLeftElement = document.getElementById('doors-left');
         if (!doorsLeftElement) return;
         
-        // Show 12 days left (13 total - 1 available = 12)
-        doorsLeftElement.textContent = 12;
+        // Show 11 days left (13 total - 3 available = 10)
+        doorsLeftElement.textContent = 10;
     }
 
 });
