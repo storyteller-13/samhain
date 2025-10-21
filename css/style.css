@@ -1094,8 +1094,7 @@ a:active {
     flex: 0 0 auto;
     max-width: 300px;
     text-align: center;
-    margin-top: 0;
-    align-self: flex-start;
+    margin-top: 120px;
 }
 
 .new-moon-img {
@@ -1110,6 +1109,12 @@ a:active {
 .new-moon-img:hover {
     transform: scale(3);
     box-shadow: 0 0 30px rgba(255, 140, 0, 0.6);
+}
+
+/* Specific styling for door 3 - align image with first frame */
+.door-3 .moon-image {
+    margin-top: 0;
+    align-self: flex-start;
 }
 
 /* Mobile optimizations for door pages */
