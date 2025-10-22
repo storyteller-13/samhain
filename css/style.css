@@ -1124,6 +1124,11 @@ a:active {
     align-self: center;
 }
 
+/* Specific styling for door 4 - move image to the right */
+.door-4 .text-with-image {
+    flex-direction: row;
+}
+
 /* Movie list styling */
 .movie-list {
     text-align: left;
