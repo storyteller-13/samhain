@@ -1137,6 +1137,20 @@ a:active {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Door 5 specific styling - same width, stacked vertically */
+.door-5 .moon-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.door-5 .new-moon-img {
+    width: 250px;
+    height: auto;
+    display: block;
+}
+
 .door-4-img:hover {
     transform: scale(3);
     box-shadow: 0 0 30px rgba(255, 140, 0, 0.6);
