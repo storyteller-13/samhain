@@ -1018,6 +1018,10 @@ a:active {
     color: #e67e00;
 }
 
+.red-link {
+    color: #c30b0b !important;
+}
+
 .door-content {
     max-width: 1400px;
     background: rgba(0, 0, 0, 0.7);
