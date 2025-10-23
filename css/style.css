@@ -1018,6 +1018,10 @@ a:active {
     color: #e67e00;
 }
 
+.red-link {
+    color: #c30b0b !important;
+}
+
 .door-content {
     max-width: 1400px;
     background: rgba(0, 0, 0, 0.7);
@@ -1137,6 +1141,29 @@ a:active {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Door 5 specific styling - same width, stacked vertically, match movie list height */
+.door-5 .text-with-image {
+    align-items: stretch;
+}
+
+.door-5 .moon-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    height: 100%;
+    justify-content: space-between;
+    align-self: stretch;
+}
+
+.door-5 .new-moon-img {
+    width: 200px;
+    height: auto;
+    display: block;
+    flex: 1;
+    object-fit: cover;
+}
+
 .door-4-img:hover {
     transform: scale(3);
     box-shadow: 0 0 30px rgba(255, 140, 0, 0.6);
@@ -1187,9 +1214,10 @@ a:active {
 .movie-list li {
     margin: 6px 0;
     padding: 0;
+    font-weight: bold;
     font-size: 0.9rem;
     line-height: 1.3;
-    color: #cd8ce2;
+    color: #16f63f;
 }
 
 /* Mobile optimizations for door pages */
