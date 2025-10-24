@@ -4,7 +4,7 @@ PORT ?= 8013
 HOST ?= localhost
 PYTHON := $(shell which python3 2>/dev/null || which python)
 
-start:
+server:
 	@echo "Starting Halloween 25 server on http://$(HOST):$(PORT)"
 	@echo "Press Ctrl+C to stop the server"
 	@$(PYTHON) -m http.server $(PORT) --bind $(HOST)
