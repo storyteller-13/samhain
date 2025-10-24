@@ -709,31 +709,21 @@ footer p {
     }
 }
 
-/* Particle styles for door 2 */
-.particle-90s {
+/* Particle styles for blood drops */
+.particle-blood {
     position: fixed;
     pointer-events: none;
     z-index: 1000;
     animation: float90s 8s ease-in-out infinite;
     opacity: 0.6;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-    filter: drop-shadow(0 0 5px rgba(255, 0, 255, 0.5));
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+    filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.5));
 }
 
-/* 90s color variations for different objects */
-.particle-90s.floppy-disk {
+/* Blood drop styling */
+.particle-blood.blood-drop {
     color: #ff0000;
     filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.7));
-}
-
-.particle-90s.cassette {
-    color: #3c00ff;
-    filter: drop-shadow(0 0 5px rgba(38, 0, 255, 0.7));
-}
-
-.particle-90s.cd {
-    color: #e5ff00;
-    filter: drop-shadow(0 0 5px rgba(255, 255, 0, 0.7));
 }
 
 @keyframes float90s {
