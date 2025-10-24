@@ -679,7 +679,7 @@ footer p {
     margin-top: 0;
 }
 
-/* Floating stars particle styles */
+/* Particle styles for door 2 */
 .particle {
     position: fixed;
     width: 8px;
@@ -690,68 +690,6 @@ footer p {
     z-index: 1000;
     animation: float 5s linear infinite;
     opacity: 0.3;
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(100vh) rotate(0deg);
-        opacity: 0;
-    }
-    10% {
-        opacity: 1;
-    }
-    90% {
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-100px) rotate(360deg);
-        opacity: 0;
-    }
-}
-
-/* Particle styles for door 2 */
-.particle-90s {
-    position: fixed;
-    pointer-events: none;
-    z-index: 1000;
-    animation: float90s 8s ease-in-out infinite;
-    opacity: 0.6;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-    filter: drop-shadow(0 0 5px rgba(255, 0, 255, 0.5));
-}
-
-/* 90s color variations for different objects */
-.particle-90s.floppy-disk {
-    color: #00ff00;
-    filter: drop-shadow(0 0 5px rgba(0, 255, 0, 0.7));
-}
-
-.particle-90s.cassette {
-    color: #ff00ff;
-    filter: drop-shadow(0 0 5px rgba(255, 0, 255, 0.7));
-}
-
-.particle-90s.cd {
-    color: #8000ff;
-    filter: drop-shadow(0 0 5px rgba(128, 0, 255, 0.7));
-}
-
-@keyframes float90s {
-    0% {
-        transform: translateY(100vh) rotate(0deg);
-    }
-    25% {
-        transform: translateY(75vh) rotate(90deg);
-    }
-    50% {
-        transform: translateY(50vh) rotate(180deg);
-    }
-    75% {
-        transform: translateY(25vh) rotate(270deg);
-    }
-    100% {
-        transform: translateY(-10vh) rotate(360deg);
-    }
 }
 
 @keyframes float {
