@@ -732,8 +732,8 @@ footer p {
 }
 
 .particle-90s.cd {
-    color: #ff8c00;
-    filter: drop-shadow(0 0 5px rgba(255, 140, 0, 0.7));
+    color: #e5ff00;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 0, 0.7));
 }
 
 @keyframes float90s {
