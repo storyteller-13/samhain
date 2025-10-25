@@ -1830,11 +1830,9 @@ a:active {
 }
 
 .explanation-content.correct-explanation {
-    border-left: 4px solid #4caf50;
 }
 
 .explanation-content.incorrect-explanation {
-    border-left: 4px solid #f44336;
 }
 
 .explanation-text {
