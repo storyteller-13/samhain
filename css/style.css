@@ -1146,7 +1146,7 @@ footer p {
 
 /* Pink effect after quiz completion */
 body.quiz-complete-pink {
-    background: linear-gradient(135deg, #ff69b4, #ff1493, #ffc0cb, #ffb6c1) !important;
+    background: #ffb6c1;
     transition: background 2s ease;
 }
 
@@ -1155,12 +1155,11 @@ body.quiz-complete-pink .door-page {
 }
 
 body.quiz-complete-pink .door-content {
-    background: rgba(230, 145, 213, 0.9) !important;
+    background: linear-gradient(135deg, #ff69b4, #ff1493, #ffc0cb, #ffb6c1) !important;
     border: 3px solid #ff1493 !important;
     box-shadow: 0 0 30px rgba(255, 20, 147, 0.6) !important;
     color: #df42ca !important;
     transition: all 2s ease;
-    font-color: #df42ca !important;
 }
 
 body.quiz-complete-pink .door-title {

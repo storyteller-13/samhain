@@ -3,13 +3,13 @@ const triviaQuestions = [
 {
         question: "halloween was originally known as what in the united states?",
         answers: [
-            "all hallows' eve",
             "all souls' night",
+            "all hallows' eve",
             "samhain",
             "harvest festival"
         ],
-        correct: 0,
-        explanation: "all hallows' eve was the original name for halloween, referring to the evening before all saints' day."
+        correct: 1,
+        explanation: "all hallows' eve, the original name for halloween, derives from the christian tradition of the evening before all saints' day. the term 'hallow' means 'holy' or 'sacred,' and the night was once dedicated to honoring saints and martyrs."
     },
     {
         question: "what does 'memento mori' mean in latin?",
@@ -20,7 +20,7 @@ const triviaQuestions = [
             "vampires must die"
         ],
         correct: 0,
-        explanation: "memento mori literally means 'remember that you must die' - a reminder of mortality to inspire living fully."
+        explanation: "memento mori, meaning 'remember that you must die,' has its origins in stoic philosophy. stoics like marcus aurelius and seneca believed that acknowledging our mortality helps us live more virtuously, focusing on what truly matters. by remembering death, we are encouraged to live with intention and purpose, making the most of our limited time."
     },
     {
         question: "many american towns hold 'haunted house' attractions during october. the first professional haunted house in the USA was opened in which decade?",
@@ -31,32 +31,32 @@ const triviaQuestions = [
             "1980s"
         ],
         correct: 1,
-        explanation: "the first professional haunted house opened in the 1930s, during the great depression, as entertainment."
+        explanation: "the first professional haunted house opened in los angeles in 1930 at golden gate amusement park during the great depression. combining vaudeville and horror, it inspired other attractions, like chicago's 'spook house' at navy pier and haunted spots at coney island, providing a thrilling escape during tough economic times."
     },
     {
-        question: "What 1978 film, directed by John Carpenter, is credited with popularizing the slasher genre and introducing the iconic villain Michael Myers to American cinema?",
+        question: "what 1978 film, directed by john carpenter, is credited with popularizing the slasher genre and introducing the iconic villain michael myers to american cinema?",
         answers: [
-            "hourglass",
-            "skull",
-            "wilted flower",
-            "all of the above"
+            "friday the 13th",
+            "nightmare on elm street",
+            "texas chainsaw massacre",
+            "halloween"
         ],
         correct: 3,
-        explanation: "all of these symbols represent mortality - hourglass (time), skull (death), and wilted flower (decay)."
+        explanation: "halloween (1978) is credited with popularizing the slasher genre, influencing films like friday the 13th and a nightmare on elm street. its success introduced iconic elements like the masked killer, stalking sequences, and the final girl, while john carpenter's eerie score became a hallmark of horror."
     },
     {
-        question: "which american singer released the song somebody's watching me, which has become a halloween favorite due to its creepy lyrics??",
+        question: "which american singer released the song somebody's watching me, which has become a halloween favorite due to its creepy lyrics?",
         answers: [
             "michael jackson",
-            "bobby pickett",
+            "bobby pickett", 
             "rockwell",
             "ray parker jr."
         ],
         correct: 2,
-        explanation: "rockwell released 'somebody's watching me' in 1984, featuring michael jackson on backing vocals. the song became a halloween classic due to its paranoid lyrics about being watched."
+        explanation: "rockwell released 'somebody's watching me' in 1984, featuring michael jackson on backing vocals. the song became a halloween classic due to its paranoid lyrics about being watched, perfectly capturing the spooky atmosphere of the season. interestingly, rockwell was the son of motown founder berry gordy, and the song's success was largely due to jackson's distinctive backing vocals."
     },
     {
-        question: "thriller was co-written by which famous music producer?",
+        question: "which legendary music producer co-wrote and produced michael jackson's thriller album, creating the best-selling album of all time?",
         answers: [
             "quincy jones",
             "phil spector",
@@ -64,7 +64,7 @@ const triviaQuestions = [
             "george martin"
         ],
         correct: 0,
-        explanation: "quincy jones co-wrote and produced michael jackson's thriller album, which became the best-selling album of all time and featured the iconic halloween-themed title track."
+        explanation: "quincy jones co-wrote and produced michael jackson's thriller album, which became the best-selling album of all time with over 100 million copies sold worldwide. the album featured the iconic halloween-themed title track 'thriller' with its famous music video directed by john landis, revolutionizing music videos and becoming a halloween classic. jones also worked on jackson's previous albums 'off the wall' and 'bad', establishing one of the most successful artist-producer partnerships in music history."
     },
     {
         question: "who is going to win my heart and become my infinite lover?",
