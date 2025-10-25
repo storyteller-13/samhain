@@ -3,18 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>door 7 of the spell</title>
+    <title>door 7 of the spell - redemption</title>
     <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
     <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
-    <div class="door-page">
+<body class="door-4">
+    <!-- Black and White Top Section -->
+    <div class="door-page black-white-section">
         <div class="door-content">
-            <h1 class="door-title">🚪 door 7 of the spell 🚪</h1>
+            <h1 class="door-title">🚪 door 7 of the spell 🚪<br>
+                "memento mori"
+            </h1>
+
+            <br>
             
             <div class="door-text">
-                <div class="placeholder-text italic">
-                    <p>Soon</p>
+                <div class="video-container" style="display: flex; justify-content: center; gap: 20px; margin: 40px 0; flex-wrap: wrap;">
+                    <iframe width="560" height="315" src="https://www.youtube.com/watch?v=iIyrLRixMs8" 
+                        title="memento mori" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen
+                        style="max-width: 100%; border-radius: 15px; border: 3px solid #ff8c00; box-shadow: 0 0 20px rgba(255, 140, 0, 0.4);">
+                    </iframe>
+                </div>
+
+                <div class="text-frame">
+                    <div class="placeholder-text">
+                        In the end, we are all equal in death.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pink Bottom Section -->
+    <div class="door-page pink-section">
+        <div class="door-content">
+            <div class="pink-content">
+                <h2 class="pink-title">Redemption</h2>
+                <p class="pink-text">In the cycle of life and death, we find our redemption through acceptance and understanding.</p>
+                <div class="pink-decoration">
+                    ✨ ✨ ✨
                 </div>
             </div>
             
@@ -23,5 +52,23 @@
     </div>
 
     <script src="../scripts/floating_stars.js"></script>
+    <script>
+        // Scroll effect to make pink section transition from black/white to pink
+        window.addEventListener('scroll', function() {
+            const pinkSection = document.querySelector('.pink-section');
+            const sectionTop = pinkSection.offsetTop;
+            const sectionHeight = pinkSection.offsetHeight;
+            const scrollPosition = window.scrollY + window.innerHeight;
+            
+            // Calculate when the pink section comes into view
+            const triggerPoint = sectionTop - (window.innerHeight * 0.3);
+            
+            if (scrollPosition > triggerPoint) {
+                pinkSection.classList.add('pink-active');
+            } else {
+                pinkSection.classList.remove('pink-active');
+            }
+        });
+    </script>
 </body>
 </html>

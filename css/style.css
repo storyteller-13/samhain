@@ -1040,7 +1040,7 @@ footer p {
 
 /* Door page styles */
 .door-page {
-    min-height: 100vh;
+    min-height: 50vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1048,6 +1048,115 @@ footer p {
     padding: 20px;
     text-align: center;
     font-family: 'Georgia', 'Times New Roman', serif, Arial, sans-serif;
+}
+
+/* Black and White Section */
+.black-white-section {
+    background: linear-gradient(135deg, #000000, #1a1a1a, #2a2a2a);
+    color: #ffffff;
+    filter: grayscale(100%);
+}
+
+.black-white-section .door-content {
+    background: rgba(0, 0, 0, 0.8);
+    border: 3px solid #ffffff;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+.black-white-section .door-title {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.black-white-section .placeholder-text {
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid #ffffff;
+}
+
+.black-white-section iframe {
+    filter: grayscale(100%);
+    border: 3px solid #ffffff !important;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Pink Section - starts as black/white, transitions to pink on scroll */
+.pink-section {
+    background: linear-gradient(135deg, #000000, #1a1a1a, #2a2a2a);
+    color: #ffffff;
+    min-height: 50vh;
+    transition: background 0.8s ease, filter 0.8s ease;
+    filter: grayscale(100%);
+}
+
+.pink-section.pink-active {
+    background: linear-gradient(135deg, #ff69b4, #ff1493, #ffc0cb, #ffb6c1);
+    filter: grayscale(0%);
+}
+
+.pink-section .door-content {
+    background: rgba(0, 0, 0, 0.8);
+    border: 3px solid #ffffff;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+    transition: background 0.8s ease, border 0.8s ease, box-shadow 0.8s ease;
+}
+
+.pink-section.pink-active .door-content {
+    background: rgba(255, 105, 180, 0.8);
+    border: 3px solid #ff1493;
+    box-shadow: 0 0 30px rgba(255, 20, 147, 0.4);
+}
+
+.pink-content {
+    margin-bottom: 30px;
+}
+
+.pink-title {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    transition: text-shadow 0.8s ease;
+}
+
+.pink-section.pink-active .pink-title {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 20, 147, 0.6);
+}
+
+.pink-text {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    transition: text-shadow 0.8s ease;
+}
+
+.pink-section.pink-active .pink-text {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), 0 0 8px rgba(255, 20, 147, 0.4);
+}
+
+.pink-decoration {
+    font-size: 2rem;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    transition: text-shadow 0.8s ease, animation 0.8s ease;
+}
+
+.pink-section.pink-active .pink-decoration {
+    animation: sparkle 2s ease-in-out infinite alternate;
+}
+
+@keyframes sparkle {
+    from {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        transform: scale(1);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.6);
+        transform: scale(1.1);
+    }
 }
 
 /* Link styling - make all links orange */
