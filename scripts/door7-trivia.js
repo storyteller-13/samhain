@@ -72,7 +72,7 @@ const triviaQuestions = [
             "the bro",
             "not the bro",
             "the other other bro",
-            "now, that's a halloween mystery"
+            "now, that's a halloween mystery..."
         ],
         correct: 2,
         explanation: "well, let's see who is brave enough to get a date with her... we don't want to live in the interwebs forever, do we?"
