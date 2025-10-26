@@ -206,7 +206,7 @@ function checkAnswer() {
     const isLastQuestion = currentQuestion === 6;
     
     if (isLastQuestion) {
-        score++; // Always increment score for the last question
+        score++;
         createExplosionEffect();
         showResults();
     } else if (selectedAnswer === question.correct) {
@@ -319,4 +319,3 @@ function createExplosionEffect() {
         }, 100);
     }, 800);
 }
-
