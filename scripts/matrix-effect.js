@@ -37,7 +37,7 @@ function createMatrixEffect() {
     const matrixChars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-=[]{}|;:,.<>?';
     
     // Font size and column settings
-    const fontSize = 14;
+    const fontSize = 24;
     const columns = Math.floor(canvas.width / fontSize);
     
     // Array to store the drops for each column
@@ -86,22 +86,29 @@ function createMatrixEffect() {
             ctx.fillText(char, i * fontSize, drops[i] * fontSize);
             
             // Reset drop to top randomly
-            if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+            if (drops[i] * fontSize > canvas.height && Math.random() > 0.985) {
                 drops[i] = 0;
             }
             
-            drops[i]++;
+            drops[i] += 0.3; // Slower drop speed
         }
     }
     
-    // Animation loop
-    function animate() {
-        drawMatrix();
+    // Animation loop with frame rate control
+    let lastTime = 0;
+    const targetFPS = 30; // Reduced from ~60fps to 30fps
+    const frameInterval = 1000 / targetFPS;
+    
+    function animate(currentTime) {
+        if (currentTime - lastTime >= frameInterval) {
+            drawMatrix();
+            lastTime = currentTime;
+        }
         requestAnimationFrame(animate);
     }
     
     // Start the animation
-    animate();
+    requestAnimationFrame(animate);
     
     // Add some variation to the effect
     setInterval(() => {
