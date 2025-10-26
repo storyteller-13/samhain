@@ -3,24 +3,323 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>door 8 of the spell</title>
+    <title>door 8 of the spell - fibonacci doors</title>
     <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .fibonacci-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 60vh;
+            perspective: 2000px;
+            position: relative;
+        }
+
+        .door-stack {
+            position: relative;
+            width: 300px;
+            height: 400px;
+        }
+
+        .fibonacci-door {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, #8B4513, #654321);
+            border: 4px solid #2F1B14;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+            box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.5),
+                inset 0 2px 4px rgba(255, 255, 255, 0.1),
+                inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Creepster', cursive;
+            overflow: hidden;
+        }
+
+        .door-panel {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, #8B4513, #654321);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+        }
+
+        .door-panel::before {
+            content: '';
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            right: 10%;
+            bottom: 10%;
+            border: 2px solid #2F1B14;
+            border-radius: 8px;
+            background: linear-gradient(145deg, #A0522D, #8B4513);
+        }
+
+        .door-number {
+            font-size: 3.5rem;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1;
+            color: #ff8c00;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+            animation: glow 2s ease-in-out infinite alternate;
+            z-index: 2;
+            position: relative;
+        }
+
+        .door-handle {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, #FFD700, #B8860B);
+            border-radius: 50%;
+            border: 2px solid #8B4513;
+            box-shadow: 
+                0 2px 4px rgba(0, 0, 0, 0.3),
+                inset 0 1px 2px rgba(255, 255, 255, 0.3);
+            z-index: 3;
+        }
+
+        .door-handle::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            background: #8B4513;
+            border-radius: 50%;
+        }
+
+        .door-frame {
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(145deg, #2F1B14, #1A0F0A);
+            border-radius: 10px;
+            z-index: -1;
+        }
+
+        .door-hinges {
+            position: absolute;
+            left: 10px;
+            top: 20%;
+            width: 8px;
+            height: 60%;
+            background: linear-gradient(to bottom, #2F1B14, #1A0F0A);
+            border-radius: 4px;
+            z-index: 1;
+        }
+
+        .door-hinges::before,
+        .door-hinges::after {
+            content: '';
+            position: absolute;
+            left: -2px;
+            width: 12px;
+            height: 8px;
+            background: #2F1B14;
+            border-radius: 2px;
+        }
+
+        .door-hinges::before {
+            top: 20%;
+        }
+
+        .door-hinges::after {
+            bottom: 20%;
+        }
+
+        .fibonacci-door:hover {
+            transform: scale(1.05);
+            box-shadow: 
+                0 15px 40px rgba(0, 0, 0, 0.6),
+                inset 0 2px 4px rgba(255, 255, 255, 0.2),
+                inset 0 -2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .fibonacci-door:hover .door-handle {
+            background: radial-gradient(circle, #FFA500, #FF8C00);
+            transform: translateY(-50%) rotate(10deg);
+        }
+
+        .fibonacci-door.opening {
+            transform: rotateY(-90deg) translateZ(-150px);
+            opacity: 0.7;
+        }
+
+        .fibonacci-door.opened {
+            transform: rotateY(-180deg) translateZ(-300px);
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .door-number {
+            font-size: 4rem;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1;
+        }
+
+        .door-label {
+            position: absolute;
+            bottom: 20px;
+            font-size: 1rem;
+            color: #9d4edd;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+
+        @keyframes glow {
+            from {
+                text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8), 0 0 10px rgba(255, 140, 0, 0.3);
+            }
+            to {
+                text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 140, 0, 0.6);
+            }
+        }
+
+        @keyframes doorAppear {
+            from {
+                opacity: 0;
+                transform: scale(0.8) rotateY(90deg);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) rotateY(0deg);
+            }
+        }
+
+        .fibonacci-door.appearing {
+            animation: doorAppear 0.6s ease-out;
+        }
+
+    </style>
 </head>
 <body>
     <div class="door-page">
         <div class="door-content">
-            <h1 class="door-title">🚪 door 8 of the spell 🚪</h1>
+            <h1 class="door-title">🚪 door 8 of the spell 🚪<br>
+                fibonacci doors
+            </h1>
             
-            <div class="door-text">
-                <div class="placeholder-text italic">
-                    <p>Soon</p>
+            <div class="fibonacci-container">
+
+
+                <div class="door-stack" id="doorStack">
+                    <!-- Doors will be dynamically created here -->
                 </div>
+
             </div>
             
             <a href="index.html" class="back-button">← back to the countdown</a>
         </div>
     </div>
+
+    <script>
+        class FibonacciDoors {
+            constructor() {
+                this.currentIndex = 0;
+                this.fibonacciSequence = this.generateFibonacciSequence(50); // Generate first 50 numbers
+                this.openedDoors = [];
+                this.doorStack = document.getElementById('doorStack');
+                
+                this.createInitialDoor();
+            }
+
+            generateFibonacciSequence(n) {
+                const sequence = [0, 1];
+                for (let i = 2; i < n; i++) {
+                    sequence[i] = sequence[i - 1] + sequence[i - 2];
+                }
+                return sequence;
+            }
+
+            createInitialDoor() {
+                this.createDoor(0);
+            }
+
+            createDoor(index) {
+                const door = document.createElement('div');
+                door.className = 'fibonacci-door appearing';
+                door.dataset.index = index;
+                door.dataset.fibonacciNumber = this.fibonacciSequence[index];
+                
+                door.innerHTML = `
+                    <div class="door-frame"></div>
+                    <div class="door-panel">
+                        <div class="door-hinges"></div>
+                        <div class="door-number">${this.fibonacciSequence[index]}</div>
+                        <div class="door-handle"></div>
+                    </div>
+                `;
+
+                door.addEventListener('click', () => this.openDoor(door));
+                
+                // Position the door
+                const zOffset = index * 20;
+                door.style.transform = `translateZ(${zOffset}px)`;
+                door.style.zIndex = 100 - index;
+                
+                this.doorStack.appendChild(door);
+                
+                // Remove appearing class after animation
+                setTimeout(() => {
+                    door.classList.remove('appearing');
+                }, 600);
+            }
+
+            openDoor(door) {
+                const index = parseInt(door.dataset.index);
+                const fibonacciNumber = parseInt(door.dataset.fibonacciNumber);
+                
+                // Add to opened doors
+                this.openedDoors.push(fibonacciNumber);
+                
+                // Animate door opening
+                door.classList.add('opening');
+                
+                setTimeout(() => {
+                    door.classList.remove('opening');
+                    door.classList.add('opened');
+                    
+                    // Create next door
+                    this.createDoor(index + 1);
+                    
+                    
+                }, 800);
+            }
+
+
+        }
+
+        // Initialize the Fibonacci doors system
+        let fibonacciDoors;
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+            fibonacciDoors = new FibonacciDoors();
+        });
+    </script>
 
     <script src="../scripts/floating_stars.js"></script>
 </body>
