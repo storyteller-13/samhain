@@ -90,7 +90,7 @@ class FibonacciDoors {
             transform: translate(-50%, -50%);
             font-size: 3rem;
             font-weight: bold;
-            color: #ff69b4;
+            color: #00ff00;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
             z-index: 1000;
             animation: pulse 2s infinite;
