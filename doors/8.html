@@ -7,7 +7,7 @@
     <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
     <link rel="stylesheet" href="../css/style.css">
     <style>
-        .hofstadter-container {
+        .fibonacci-container {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -22,7 +22,7 @@
             height: 400px;
         }
 
-        .hofstadter-door {
+        .fibonacci-door {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -167,7 +167,7 @@
             bottom: 20%;
         }
 
-        .hofstadter-door:hover {
+        .fibonacci-door:hover {
             transform: scale(1.05);
             box-shadow: 
                 0 15px 40px rgba(0, 0, 0, 0.6),
@@ -175,7 +175,7 @@
                 inset 0 -2px 4px rgba(0, 0, 0, 0.4);
         }
 
-        .hofstadter-door:hover .door-handle {
+        .fibonacci-door:hover .door-handle {
             background: radial-gradient(circle at 30% 30%, #FFA500, #FF8C00, #FF6B00);
             transform: translateY(-50%) rotate(15deg) scale(1.1);
             box-shadow: 
@@ -185,17 +185,17 @@
                 inset 0 -1px 2px rgba(0, 0, 0, 0.3);
         }
 
-        .hofstadter-door:hover .door-handle::after {
+        .fibonacci-door:hover .door-handle::after {
             background: radial-gradient(circle, #FFA500, #FF8C00);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
-        .hofstadter-door.opening {
+        .fibonacci-door.opening {
             transform: rotateY(-90deg) translateZ(-150px);
             opacity: 0.1;
         }
 
-        .hofstadter-door.opened {
+        .fibonacci-door.opened {
             transform: rotateY(-180deg) translateZ(-300px);
             opacity: 0.1;
             pointer-events: none;
@@ -231,8 +231,59 @@
             }
         }
 
-        .hofstadter-door.appearing {
+        .fibonacci-door.appearing {
             animation: doorAppear 0.6s ease-out;
+        }
+
+        .sequence-frame {
+            position: absolute;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(145deg, #2F1B14, #1A0F0A);
+            border: 3px solid #8B4513;
+            border-radius: 12px;
+            padding: 8px 16px;
+            box-shadow: 
+                0 4px 12px rgba(0, 0, 0, 0.6),
+                inset 0 2px 4px rgba(255, 255, 255, 0.1),
+                inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+            font-family: 'Creepster', cursive;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ff8c00;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            animation: frameGlow 2s ease-in-out infinite alternate;
+        }
+
+        .sequence-frame::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(145deg, #8B4513, #654321);
+            border-radius: 12px;
+            z-index: -1;
+        }
+
+        @keyframes frameGlow {
+            from {
+                box-shadow: 
+                    0 4px 12px rgba(0, 0, 0, 0.6),
+                    inset 0 2px 4px rgba(255, 255, 255, 0.1),
+                    inset 0 -2px 4px rgba(0, 0, 0, 0.3),
+                    0 0 10px rgba(255, 140, 0, 0.3);
+            }
+            to {
+                box-shadow: 
+                    0 4px 12px rgba(0, 0, 0, 0.6),
+                    inset 0 2px 4px rgba(255, 255, 255, 0.1),
+                    inset 0 -2px 4px rgba(0, 0, 0, 0.3),
+                    0 0 20px rgba(255, 140, 0, 0.6);
+            }
         }
 
     </style>
@@ -244,9 +295,7 @@
                 ♾️
             </h1>
             
-            <div class="hofstadter-container">
-
-
+            <div class="fibonacci-container">
                 <div class="door-stack" id="doorStack">
                     <!-- Doors will be dynamically created here -->
                 </div>
@@ -258,20 +307,21 @@
     </div>
 
     <script>
-        class HofstadterQDoors {
+        class FibonacciDoors {
             constructor() {
                 this.currentIndex = 0;
-                this.hofstadterQSequence = this.generateHofstadterQSequence(50); // Generate first 50 numbers
+                this.fibonacciSequence = this.generateFibonacciSequence(50); // Generate first 50 numbers
                 this.openedDoors = [];
                 this.doorStack = document.getElementById('doorStack');
+                
                 
                 this.createInitialDoor();
             }
 
-            generateHofstadterQSequence(n) {
-                const sequence = [0, 1, 1]; // Q(0) = 0, Q(1) = Q(2) = 1
-                for (let i = 3; i < n; i++) {
-                    sequence[i] = sequence[i - sequence[i-1]] + sequence[i - sequence[i-2]];
+            generateFibonacciSequence(n) {
+                const sequence = [0, 1]; // F(0) = 0, F(1) = 1
+                for (let i = 2; i < n; i++) {
+                    sequence[i] = sequence[i-1] + sequence[i-2];
                 }
                 return sequence;
             }
@@ -281,16 +331,18 @@
             }
 
             createDoor(index) {
+                
                 const door = document.createElement('div');
-                door.className = 'hofstadter-door appearing';
+                door.className = 'fibonacci-door appearing';
                 door.dataset.index = index;
-                door.dataset.hofstadterNumber = this.hofstadterQSequence[index];
+                door.dataset.fibonacciNumber = this.fibonacciSequence[index];
                 
                 door.innerHTML = `
+                    <div class="sequence-frame">Door ${this.fibonacciSequence[index]}</div>
                     <div class="door-frame"></div>
                     <div class="door-panel">
                         <div class="door-hinges"></div>
-                        <div class="door-number">${this.hofstadterQSequence[index]}</div>
+                        <div class="door-number">${this.fibonacciSequence[index]}</div>
                         <div class="door-handle"></div>
                     </div>
                 `;
@@ -312,10 +364,10 @@
 
             openDoor(door) {
                 const index = parseInt(door.dataset.index);
-                const hofstadterNumber = parseInt(door.dataset.hofstadterNumber);
+                const fibonacciNumber = parseInt(door.dataset.fibonacciNumber);
                 
                 // Add to opened doors
-                this.openedDoors.push(hofstadterNumber);
+                this.openedDoors.push(fibonacciNumber);
                 
                 // Hide the door number immediately
                 const doorNumberElement = door.querySelector('.door-number');
@@ -332,20 +384,15 @@
                     
                     // Create next door
                     this.createDoor(index + 1);
-                    
-                    
                 }, 800);
             }
 
 
         }
 
-        // Initialize the Hofstadter–Q doors system
-        let hofstadterQDoors;
-
-
+        // Initialize the Fibonacci doors system
         document.addEventListener('DOMContentLoaded', function() {
-            hofstadterQDoors = new HofstadterQDoors();
+            new FibonacciDoors();
         });
     </script>
 
