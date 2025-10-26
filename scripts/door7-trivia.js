@@ -1,6 +1,6 @@
 const triviaQuestions = [
 {
-        question: "halloween was originally known as what in the united states?",
+        question: "what was halloween originally known as in the united states?",
         answers: [
             "all souls' night",
             "all hallows' eve",
