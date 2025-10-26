@@ -44,7 +44,7 @@ const triviaQuestions = [
         explanation: "halloween (1978) is credited with popularizing the slasher genre, influencing films like friday the 13th and a nightmare on elm street. its success introduced iconic elements like the masked killer, stalking sequences, and the final girl, while john carpenter's eerie score became a hallmark of horror."
     },
     {
-        question: "which american singer released the 'song somebody's watching me', which has become a halloween favorite due to its creepy lyrics?",
+        question: "which american singer released the song 'somebody's watching me', which has become a halloween favorite due to its creepy lyrics?",
         answers: [
             "michael jackson",
             "bobby pickett", 
