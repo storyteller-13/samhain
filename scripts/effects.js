@@ -6,8 +6,8 @@
 // Configuration constants
 const CONFIG = {
     TOTAL_DOORS: 13,
-    AVAILABLE_DOORS: [1, 2, 3, 4, 5, 6, 7, 8], // Doors that can be opened
-    DOORS_LEFT_COUNT: 6, // Total doors - available doors
+    AVAILABLE_DOORS: [1, 2, 3, 4, 5, 6, 7, 8, 9], // Doors that can be opened
+    DOORS_LEFT_COUNT: 5, // Total doors - available doors
     UPDATE_INTERVAL: 3600000, // 1 hour in milliseconds
     AUDIO_FREQUENCY: 200,
     AUDIO_DURATION: 0.5
