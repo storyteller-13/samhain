@@ -2563,3 +2563,14 @@ a:active {
             inset 0 -3px 6px rgba(0, 0, 0, 0.6);
     }
 }
+
+/* Door 10 highlighted text styling */
+.highlighted-text {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #08db91;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    font-style: italic;
+    padding: 30px;
+    margin: 30px;
+}
