@@ -814,6 +814,41 @@ footer p {
     }
 }
 
+/* Particle styles for candles */
+.particle-candle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 1000;
+    animation: floatCandles 8s ease-in-out infinite;
+    opacity: 0.6;
+    text-shadow: 0 0 10px rgba(11, 156, 30, 0.8);
+    filter: drop-shadow(0 0 5px rgba(255, 165, 0, 0.5));
+}
+
+/* Candle drop styling */
+.particle-candle.candle-drop {
+    color: #ffa500;
+    filter: drop-shadow(0 0 5px rgba(30, 201, 7, 0.7));
+}
+
+@keyframes floatCandles {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+    }
+    25% {
+        transform: translateY(75vh) rotate(90deg);
+    }
+    50% {
+        transform: translateY(50vh) rotate(180deg);
+    }
+    75% {
+        transform: translateY(25vh) rotate(270deg);
+    }
+    100% {
+        transform: translateY(-10vh) rotate(360deg);
+    }
+}
+
 @keyframes float {
     0% {
         transform: translateY(100vh) rotate(0deg);
