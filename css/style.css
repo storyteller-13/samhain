@@ -2574,3 +2574,57 @@ a:active {
     padding: 30px;
     margin: 30px;
 }
+
+/* Soul Effect - Divine Light Animation */
+.soul-effect {
+    color: #ffd700;
+    text-shadow: 
+        0 0 5px #ffd700,
+        0 0 10px #ffd700,
+        0 0 15px #ffd700,
+        0 0 20px #ff8c00,
+        0 0 35px #ff8c00,
+        0 0 40px #ff8c00;
+    animation: soulGlow 3s ease-in-out infinite alternate;
+    font-weight: bold;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.soul-effect:hover {
+    transform: scale(1.1);
+    animation-duration: 1s;
+}
+
+@keyframes soulGlow {
+    0% {
+        text-shadow: 
+            0 0 5px #ffd700,
+            0 0 10px #ffd700,
+            0 0 15px #ffd700,
+            0 0 20px #ff8c00,
+            0 0 35px #ff8c00,
+            0 0 40px #ff8c00;
+        color: #ffd700;
+    }
+    50% {
+        text-shadow: 
+            0 0 10px #ffd700,
+            0 0 20px #ffd700,
+            0 0 30px #ffd700,
+            0 0 40px #ff8c00,
+            0 0 50px #ff8c00,
+            0 0 60px #ff8c00;
+        color: #fff;
+    }
+    100% {
+        text-shadow: 
+            0 0 15px #ffd700,
+            0 0 25px #ffd700,
+            0 0 35px #ffd700,
+            0 0 45px #ff8c00,
+            0 0 55px #ff8c00,
+            0 0 65px #ff8c00;
+        color: #ffd700;
+    }
+}
