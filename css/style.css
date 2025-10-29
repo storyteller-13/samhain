@@ -314,6 +314,7 @@ h2 {
     justify-self: center; /* Center within the grid */
     width: 250px;
     height: 300px;
+    margin-top: 40px; /* Add top margin for spacing */
 }
 
 .door[data-day="13"] .door-front {
@@ -479,6 +480,7 @@ footer p {
         height: 220px;
         grid-column: 1 / -1;
         justify-self: center;
+        margin-top: 30px;
     }
     
     .door[data-day="13"] .door-number {
@@ -547,6 +549,7 @@ footer p {
         height: 200px;
         grid-column: 1 / -1;
         justify-self: center;
+        margin-top: 25px;
     }
     
     .door[data-day="13"] .door-number {
@@ -612,6 +615,7 @@ footer p {
     .door[data-day="13"] {
         width: 140px;
         height: 180px;
+        margin-top: 20px;
     }
     
     .door[data-day="13"] .door-number {
@@ -797,6 +801,41 @@ footer p {
 }
 
 @keyframes float90s {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+    }
+    25% {
+        transform: translateY(75vh) rotate(90deg);
+    }
+    50% {
+        transform: translateY(50vh) rotate(180deg);
+    }
+    75% {
+        transform: translateY(25vh) rotate(270deg);
+    }
+    100% {
+        transform: translateY(-10vh) rotate(360deg);
+    }
+}
+
+/* Particle styles for candles */
+.particle-candle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 1000;
+    animation: floatCandles 8s ease-in-out infinite;
+    opacity: 0.6;
+    text-shadow: 0 0 10px rgba(51, 37, 239, 0.8);
+    filter: drop-shadow(0 0 5px rgba(55, 0, 255, 0.5));
+}
+
+/* Candle drop styling */
+.particle-candle.candle-drop {
+    color: #2549fc;
+    filter: drop-shadow(0 0 5px rgba(83, 12, 247, 0.7));
+}
+
+@keyframes floatCandles {
     0% {
         transform: translateY(100vh) rotate(0deg);
     }
@@ -1329,6 +1368,10 @@ a:active {
     color: #c30b0b !important;
 }
 
+.blue-link {
+    color: #1e91e2 !important;
+}
+
 .door-content {
     max-width: 1400px;
     background: rgba(0, 0, 0, 0.7);
@@ -1516,6 +1559,7 @@ a:active {
     margin: 20px auto;
     padding: 0 0 0 40px;
     list-style: decimal;
+    font-style: bold;
 }
 
 .movie-list li {
@@ -1568,6 +1612,7 @@ a:active {
         padding: 15px;
         font-size: 1rem;
         line-height: 1.6;
+        font-style: bold;
     }
     
     .text-with-image {

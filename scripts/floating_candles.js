@@ -1,20 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
-    createFloating90sObjects();
+    createFloatingCandles();
 });
 
-function createFloating90sObjects() {
+function createFloatingCandles() {
     const objectCount = 30;
     
-    // Blood drop objects with their corresponding CSS classes
-    const objects90s = [
-        { symbol: '🩸', class: 'blood-drop' }
+    // Candle objects with their corresponding CSS classes
+    const candleObjects = [
+        { symbol: '🧟‍♀️', class: 'candle-drop' },
+        { symbol: '🧟', class: 'candle-drop' },
+        { symbol: '🪦', class: 'candle-drop' }
     ];
     
     for (let i = 0; i < objectCount; i++) {
         const object = document.createElement('div');
-        const randomObject = objects90s[Math.floor(Math.random() * objects90s.length)];
+        const randomObject = candleObjects[Math.floor(Math.random() * candleObjects.length)];
         
-        object.className = `particle-blood ${randomObject.class}`;
+        object.className = `particle-candle ${randomObject.class}`;
         object.textContent = randomObject.symbol;
         object.style.left = `${Math.random() * 100}vw`;
         object.style.top = `${Math.random() * 100}vh`;
