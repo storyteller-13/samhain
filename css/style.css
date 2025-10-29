@@ -314,6 +314,7 @@ h2 {
     justify-self: center; /* Center within the grid */
     width: 250px;
     height: 300px;
+    margin-top: 40px; /* Add top margin for spacing */
 }
 
 .door[data-day="13"] .door-front {
@@ -479,6 +480,7 @@ footer p {
         height: 220px;
         grid-column: 1 / -1;
         justify-self: center;
+        margin-top: 30px;
     }
     
     .door[data-day="13"] .door-number {
@@ -547,6 +549,7 @@ footer p {
         height: 200px;
         grid-column: 1 / -1;
         justify-self: center;
+        margin-top: 25px;
     }
     
     .door[data-day="13"] .door-number {
@@ -612,6 +615,7 @@ footer p {
     .door[data-day="13"] {
         width: 140px;
         height: 180px;
+        margin-top: 20px;
     }
     
     .door[data-day="13"] .door-number {
@@ -2614,4 +2618,58 @@ a:active {
     font-style: italic;
     padding: 30px;
     margin: 30px;
+}
+
+/* Soul Effect - Divine Light Animation */
+.soul-effect {
+    color: #ffd700;
+    text-shadow: 
+        0 0 5px #ffd700,
+        0 0 10px #ffd700,
+        0 0 15px #ffd700,
+        0 0 20px #ff8c00,
+        0 0 35px #ff8c00,
+        0 0 40px #ff8c00;
+    animation: soulGlow 3s ease-in-out infinite alternate;
+    font-weight: bold;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.soul-effect:hover {
+    transform: scale(1.1);
+    animation-duration: 1s;
+}
+
+@keyframes soulGlow {
+    0% {
+        text-shadow: 
+            0 0 5px #ffd700,
+            0 0 10px #ffd700,
+            0 0 15px #ffd700,
+            0 0 20px #ff8c00,
+            0 0 35px #ff8c00,
+            0 0 40px #ff8c00;
+        color: #ffd700;
+    }
+    50% {
+        text-shadow: 
+            0 0 10px #ffd700,
+            0 0 20px #ffd700,
+            0 0 30px #ffd700,
+            0 0 40px #ff8c00,
+            0 0 50px #ff8c00,
+            0 0 60px #ff8c00;
+        color: #fff;
+    }
+    100% {
+        text-shadow: 
+            0 0 15px #ffd700,
+            0 0 25px #ffd700,
+            0 0 35px #ffd700,
+            0 0 45px #ff8c00,
+            0 0 55px #ff8c00,
+            0 0 65px #ff8c00;
+        color: #ffd700;
+    }
 }
