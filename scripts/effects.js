@@ -95,7 +95,7 @@ function showLockedMessage(doorNumber) {
     if (CONFIG.AVAILABLE_DOORS.includes(doorNumber)) {
         alert(`Door ${doorNumber} is already available to open!`);
     } else {
-        alert(`Door ${doorNumber} rests in silence for now — its lock a whisper of mystery and time. One day, when the spell's gentle bloom reveals its truth, it shall finally open. Until that dawn, dear anon, cradle faith and hope within your heart, and remember the sacred purpose that breathes through your living days. Love, always.`);
+        alert(`door ${doorNumber} rests in silence for now — its lock a whisper of mystery and time. one day, when the spell's gentle bloom reveals its truth, it shall finally open. until that dawn, dear anon, cradle faith and hope within your heart, and remember the sacred purpose that breathes through your living days. love && hope, always.`);
     }
 }
 
