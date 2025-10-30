@@ -17,57 +17,229 @@
                 hope
             </h1>
 
-            <br>
+            <br><br>
+
+            <div class="centered-images">
+                <div class="image-container">
+                    <img src="../assets/12_1.jpg" class="door-4-img">
+                </div>
+                <div class="image-container">
+                    <img src="../assets/12_2.jpg" class="door-4-img">
+                </div>
+                <div class="image-container">
+                    <img src="../assets/12_3.webp" class="door-4-img">
+                </div>
+                <div class="image-container">
+                    <img src="../assets/12_9.jpg" class="door-4-img">
+                </div>
+            </div>
+
+            <div style="position: relative; margin: 30px 0; perspective: 1000px;">
+                <blockquote style="
+                    color: #fff;
+                    font-style: italic;
+                    font-size: 1.3rem;
+                    text-align: center;
+                    margin: 0;
+                    padding: 30px;
+                    background: linear-gradient(135deg, rgba(255, 140, 0, 0.15) 0%, rgba(187, 59, 246, 0.15) 100%);
+                    border: 2px solid transparent;
+                    border-image: linear-gradient(45deg, #ff8c00, #bb3bf6, #ff8c00) 1;
+                    border-radius: 20px;
+                    box-shadow: 
+                        0 0 30px rgba(255, 140, 0, 0.3),
+                        0 0 60px rgba(187, 59, 246, 0.2),
+                        inset 0 0 20px rgba(255, 255, 255, 0.1);
+                    position: relative;
+                    overflow: hidden;
+                    transform: rotateY(2deg) rotateX(1deg);
+                    transition: all 0.3s ease;
+                " onmouseover="this.style.transform='rotateY(0deg) rotateX(0deg) scale(1.02)'" onmouseout="this.style.transform='rotateY(2deg) rotateX(1deg) scale(1)'">
+                    
+                    <!-- Animated background elements -->
+                    <div style="
+                        position: absolute;
+                        top: -50%;
+                        left: -50%;
+                        width: 200%;
+                        height: 200%;
+                        background: radial-gradient(circle, rgba(255, 140, 0, 0.1) 0%, transparent 70%);
+                        animation: rotate 20s linear infinite;
+                        pointer-events: none;
+                    "></div>
+                    
+                    <div style="
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.05) 50%, transparent 70%);
+                        animation: shimmer 3s ease-in-out infinite;
+                        pointer-events: none;
+                    "></div>
+                    
+                    <p style="
+                        margin: 0;
+                        font-size: 1.4rem;
+                        line-height: 1.6;
+                        text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+                        position: relative;
+                        z-index: 2;
+                        background: linear-gradient(45deg, #ff8c00, #ffb347, #bb3bf6);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                    ">
+                        "As for me, I will always have hope;<br>
+                        I will praise you more and more."
+                    </p>
+                    
+                    <cite style="
+                        display: block;
+                        margin-top: 15px;
+                        font-size: 1rem;
+                        color: #bb3bf6;
+                        text-shadow: 0 0 8px rgba(187, 59, 246, 0.6);
+                        position: relative;
+                        z-index: 2;
+                        font-weight: 500;
+                        letter-spacing: 0.5px;
+                    ">
+                        — Psalm 71:14 (NIV)
+                    </cite>
+                    
+                    <!-- Decorative corner elements -->
+                    <div style="
+                        position: absolute;
+                        top: 10px;
+                        left: 10px;
+                        width: 20px;
+                        height: 20px;
+                        border-top: 2px solid #ff8c00;
+                        border-left: 2px solid #ff8c00;
+                        border-radius: 5px 0 0 0;
+                    "></div>
+                    <div style="
+                        position: absolute;
+                        top: 10px;
+                        right: 10px;
+                        width: 20px;
+                        height: 20px;
+                        border-top: 2px solid #bb3bf6;
+                        border-right: 2px solid #bb3bf6;
+                        border-radius: 0 5px 0 0;
+                    "></div>
+                    <div style="
+                        position: absolute;
+                        bottom: 10px;
+                        left: 10px;
+                        width: 20px;
+                        height: 20px;
+                        border-bottom: 2px solid #bb3bf6;
+                        border-left: 2px solid #bb3bf6;
+                        border-radius: 0 0 0 5px;
+                    "></div>
+                    <div style="
+                        position: absolute;
+                        bottom: 10px;
+                        right: 10px;
+                        width: 20px;
+                        height: 20px;
+                        border-bottom: 2px solid #ff8c00;
+                        border-right: 2px solid #ff8c00;
+                        border-radius: 0 0 5px 0;
+                    "></div>
+                </blockquote>
+            </div>
             
+            <style>
+                @keyframes rotate {
+                    from { transform: rotate(0deg); }
+                    to { transform: rotate(360deg); }
+                }
+                
+                @keyframes shimmer {
+                    0%, 100% { transform: translateX(-100%); }
+                    50% { transform: translateX(100%); }
+                }
+            </style>
+
+
+
             <div class="door-text">
                 <div class="text-frame">
-                    <div class="placeholder-text">
 
-                        <span style="color: rgb(229, 32, 134); font-weight: bold; font-size: 1.8rem;">happy 22nd day, anon</span>
+                    <span style="color: rgb(229, 32, 134); font-weight: bold; font-size: 2.5rem;">gm, my friend<br>
+                        this is a goodbye, for now
+                    </span>
+                
+                    <br><br><br>
+
+                    <span style="color: rgb(187, 59, 246); font-weight: bold; font-size: 1.2rem;">
+                        even in face of an incommensurable amount of pain<br>
+                        i gave you my very best — with all my heart<br>
+                        thank you so much for sharing this spacetime with me<br>
+                        it was a privilege to unfold this experiment together
+                        
+                        <br><br>
+
+                        winter is coming, and i need to take care of myself<br>
+                        (my personal life, my health, and my work)<br>
+                        i told you i'm working on a new artwork, along with my research<br>
+                        and now i'll be putting my full attention into them
 
                         <br><br>
 
-                        what's forgiveness?
+                        i'll return in the future with new art and new stories<br>
+                        and we will open door #13 together<br>
+                        (once my personal results from this spell are unveiled)
 
-                        forgiveness is the act of letting go of resentment and anger towards someone who has wronged you.
+                        <br><br>
 
-                        can i forgive the man who told me he would marry me and he loved me, but instead he destroyed my reputation and shared
-                        my private life with entiere world in a way that i can never recover from? or go back from? a man i took in my sacred space home and 
-                        and considered a good friend? a man i went to visit his family on thanksgiving? a man who stole my ideas? who tried to destroyed
-                        my career, my soul, my future, everything i had? i man who lied in my face for years? a man so evil who still thinks what he did
-                        was not one of the most horrencdous crimes in our generation? a man who proved that human traffic can happen to everyone,
-                        even the silly brazilian woman who works all day, all life, and just wanted to make the world a better place? a man who has absolyutely
-                        no achivemtns in his own life, and the biggest thing he has ever done was destroy every woman who believe in his lies?
-
-                        yes, i can. becuase i refuse to let this pain and sufferering control any other day of my life. the damage is done, and it
-                        already changhed me forever, how can i ever recover from this? the only way to move forward is to forgive, and let go of the anger and resentment.
-
-                        does this man deserves go to jail and maybe get life in prison? yes, he does. and he will. this is just how justice works.
-                        forggivenes is my personal choice to deal with the deads from evil. justice is for the law, forgiveness is for the heart.
-
-                    </div>
-                </div>
-
-                <div class="centered-images">
-                    <div class="image-container">
-                        <img src="../assets/kiss2.jpeg" class="door-4-img">
-                    </div>
-                    <div class="image-container">
-                        <img src="../assets/kiss.jpg" class="door-4-img">
-                    </div>
-                </div>
-
-                <div class="text-frame">
-                    <div class="placeholder-text">
-
-                        <span style="color: rgb(158, 68, 248); font-weight: bold; font-size: 1.8rem;">what's a soulmate?</span>
-
-                        <br>
-
+                        until then, take good care of yourself<br>
+                        and remember the sacred purpose that breathes<br>
+                        through your living days
                         
+                        <br><br>
 
-                    </div>
+                        love, always <3
+
+                        <br><br><br>
+
+                    </span>
+
+                <div class="video-container">
+                    <iframe width="400" height="250" src="https://www.youtube.com/embed/kS9uTiEY9ag?modestbranding=1&rel=0&controls=1&fs=1" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen
+                        referrerpolicy="no-referrer-when-downgrade"
+                        style="max-width: 100%; border-radius: 15px; border: 3px solid #ff8c00; box-shadow: 0 0 20px rgba(255, 140, 0, 0.4); margin-top: 20px;">
+                    </iframe>
                 </div>
+
+            </div>
+
+            <br><br>
+
+            <div class="centered-images">
+                <div class="image-container">
+                    <img src="../assets/12_4.jpg" class="door-4-img">
+                </div>
+
+                <div class="image-container">
+                    <img src="../assets/12_8.jpg" class="door-4-img">
+                </div>
+                <div class="image-container">
+                    <img src="../assets/12_5.jpg" class="door-4-img">
+                </div>
+                <div class="image-container">
+                    <img src="../assets/12_7.jpg" class="door-4-img">
+                </div>
+                <div class="image-container">
+                    <img src="../assets/12_6.jpg" class="door-4-img">
+                </div>
+            </div>
 
             </div>
 
